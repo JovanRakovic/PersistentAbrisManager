@@ -34,13 +34,13 @@ There are two ways of doing this:
   <li>Open the PersistentAbris folder that was created after unziping and launch PersistentAbrisManager.exe</li>
   <li>To replace the ABRIS.lua file, we will focus on the bottom left section of the app titled: DCS root directory 
       <br>
-      <img src="./readme_data/pam_window_first_opening.png"></img>
+      <img witdh="70%" src="./readme_data/pam_window_first_opening.png"></img>
       <br>
       Press the "Select Directory" button.<br>
       This will bring up a folder seletion interface. Simply navigate to the root directory of your DCS instalation ( The folder you select will likely be called DCS World )<br>
       After doing so, providing you selected the correct folder, the text box below the button should be populated with the full path to the folder in which ABRIS.lua is located.<br>
       The full path won't fit inside the allocated display space, but if it is showing a path, then it is the correct one as the app checks if the path exists.<br>
-      <img src="./readme_data/pam_window_selected_path.png"></img><br>
+      <img witdh="70%" src="./readme_data/pam_window_selected_path.png"></img><br>
       If the path is valid, it will also be saved in a .txt file inside the PersistentAbris directory and it will be loaded from there on any future launches of the manager app
   </li>
   <li>
@@ -56,7 +56,7 @@ There are two ways of doing this:
     <li>To save any routes in game, you will first need to save and name them using the PLAN page of the Abris.</li>
     <li>Navigate to the MENU/CONTROL/DTB page of the abris.
         <br>
-        <img width="50%" src="./readme_data/abris_dtb_page.png"></img>
+        <img width="25%" src="./readme_data/abris_dtb_page.png"></img>
         <br>
     </li>
     <li>Press the SAVE button and use the rotary knob or the arrow buttons to navigate to the data you want to save.<br>
@@ -81,7 +81,7 @@ There are two ways of doing this:
   With that in mind, you can change the data you have loaded in your abris during a mission by respawning. This is achived by moving the wanted data files into the Database folder.
 
 <h3>PersistentAbrisManager</h3>
-  <img src="./readme_data/pam_window_with_collections.png"></img><br>
+  <img witdh="70%" src="./readme_data/pam_window_with_collections.png"></img><br>
   We will analyse all aspects of the manager app, apart from the "DCS root directory" section, as it was covered in the installation process.<br>
 
   <h4>Working principle of the app</h4>
