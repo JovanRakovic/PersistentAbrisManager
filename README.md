@@ -44,7 +44,7 @@ There are two ways of doing this:
       If the path is valid, it will also be saved in a .txt file inside the PersistentAbris directory and it will be loaded from there on any future launches of the manager app
   </li>
   <li>
-      Having slected the path, simply press the "Replace ABRIS.lua" button.<br>
+      Having slected the path, press the "Replace ABRIS.lua" button.<br>
       It will create a copy of the ABRIS.lua file in the same directory it was found in (it will be renamed to ABRIS_old.lua) and copy the modified file in its place.<br>
       Keep in mind that the ABRIS_old.lua will not be overwritten if it already exists. If ED updates the ABRIS.lua file at some point, you will need to delete the ABRIS_old.lua to make sure it gets backedup when replacing the file again.
   </li>
