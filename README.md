@@ -56,7 +56,7 @@ There are two ways of doing this:
     <li>To save any routes in game, you will first need to save and name them using the PLAN page of the Abris.</li>
     <li>Navigate to the MENU/CONTROL/DTB page of the abris.
         <br>
-        <img src="./readme_data/abris_dtb_page.png"></img>
+        <img width="50%" src="./readme_data/abris_dtb_page.png"></img>
         <br>
     </li>
     <li>Press the SAVE button and use the rotary knob or the arrow buttons to navigate to the data you want to save.<br>
