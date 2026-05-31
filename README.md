@@ -30,7 +30,7 @@ There are two ways of doing this:
 <h3>PersistentAbrisManager method</h3>
 <ol>
   <li>Download the lates release of the manager app (PersistentAbrisManager.zip)</li>
-  <li>Unzip the downloaded file directly into the SavedGames DCS directory</li>
+  <li>Unzip the downloaded archive directly into the SavedGames DCS directory</li>
   <li>Open the PersistentAbris folder that was created after unziping and launch PersistentAbrisManager.exe</li>
   <li>To replace the ABRIS.lua file, we will focus on the bottom left section of the app titled: DCS root directory 
       <br>
