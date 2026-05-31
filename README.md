@@ -21,7 +21,7 @@ There are two ways of doing this:
   <li>Download the modified ABRIS.lua file from the repository above</li>
   <li>Repalce the original ABRIS.lua file in "[your dcs root directory]/Mods/aircraft/Ka-50_3/Cockpit/Scripts/Devices_specs/" with the downloaded one (feel free to save the original file somewhere)</li>
   <li>In the SavedGames DCS directory make a folder called PersistentAbris, inside it a folder call ABRIS, and inside it a folder called Database.<br>
-      You should end up with folder structure inside the SavedGames directory: PersistentAbris/ABRIS/Database </li>
+      You should end up with this folder structure inside the SavedGames directory: PersistentAbris/ABRIS/Database </li>
   <br>
   Those are the bare minimum steps to get PersistentAbris working, you should be able to save and load you data now. <br>
   <b>You can find information about saving and loading data in the "How to use" section below</b>
