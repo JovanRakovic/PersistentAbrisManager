@@ -73,12 +73,14 @@ There are two ways of doing this:
       <li>ADDITIONAL.lua</li>
       <li>NAVIGATION.lua</li>
     </ul>
-  <b>Note: the DTB page of the Abris has a use in vanila DCS as well, though not many people seem to know that. You can save all the mentioned data while in a mission or server, in the sense that when you die or respawn in that mission, the data doesn't get lost. It just doesn't provide the ability for that data to persist across missions, so reloading the mission or leaving the server deleted the data</b>
+  <b>Note: the DTB page of the Abris has a use in vanila DCS as well, though not many people seem to know that. You can save all the mentioned data while in a mission or server, in the sense that when you die or respawn in that mission, the data doesn't get lost. It just doesn't provide the ability for that data to persist across missions, so reloading the mission or leaving the server would delete the data. The mod only builds on that system to make it persistant, which is why saving and loading of data can be done entierly in game.</b>
   
 <h3>Loading data in game</h3>
   The loading of the data is automatic.<br>
   When you spawn in a Ka-50, the data stored in the "ABRIS/Database" folder will be loaded into the Abris.<br>
-  With that in mind, you can change the data you have loaded in your abris during a mission by respawning. This is achived by moving the wanted data files into the Database folder.
+  With that in mind, you can change the data you have loaded in your abris during a mission by respawning. This is achived by moving the wanted data files into the Database folder.<br><br>
+  <b>Keep in mind -</b> from testing it seems that the NAVIGATION.lua is needed to go along side the other two files. Meaning, if you want to save just the routes, and not the additional info, you will need to also save the nav data along with the routes - same for the additional info, you would need to save the nav data with it as well and load them together to have it work properly.<br>
+    <b>To simplify: always save and load the navigation data along with routes and/or additional info. Othervies the abris might not display your data</b>
 
 <h3>PersistentAbrisManager</h3>
   <img witdh="40%" src="./readme_data/pam_window_with_collections.png"></img><br>
@@ -89,8 +91,7 @@ There are two ways of doing this:
     The data consists of the three file mentioned in the Saving section above.<br>
     By moving those files in and out of the ABRIS/Database folder, they can be loaded in game or stored in a different directory for later use.
     All the app does is it creates collections which consist of the abris data files by way of making folders in the "ABRIS/" directory and copying files between those folders and the Database folder.<br>
-    Collections don't have to consist of all the data files, but from testing it does seem that the NAVIGATION.lua is needed to go along side the other two files. Meaning, if you want to save just the routes, and not the additional info, you will need to also save the nav data along with the routes - same for the additional info, you would need to save the nav data with it as well and load them together to have it work properly.<br>
-    <b>To simplify: always save and load the navigation data! Othervies your routes and additional info might not work properly</b>
+    The collections don't have to contain all 3 files, but as mentioned earlier, always save and load the navigation data along with the routes and/or additional info!
     
   <h4>Collection name input field</h4>
     The collection name field is used to indicate which collection you want to work with.<br>
