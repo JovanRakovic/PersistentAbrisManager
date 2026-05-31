@@ -89,7 +89,8 @@ There are two ways of doing this:
     The data consists of the three file mentioned in the Saving section above.<br>
     By moving those files in and out of the ABRIS/Database folder, they can be loaded in game or stored in a different directory for later use.
     All the app does is it creates collections which consist of the abris data files by way of making folders in the "ABRIS/" directory and copying files between those folders and the Database folder.<br>
-    Collections don't have to consist of all the data files, but rather can be partial collections having only one or two of the files.
+    Collections don't have to consist of all the data files, but from testing it does seem that the NAVIGATION.lua is needed to go along side the other two files. Meaning, if you want to save just the routes, and not the additional info, you will need to also save the nav data along with the routes - same for the additional info, you would need to save the nav data with it as well and load them together to have it work properly.<br>
+    <b>To simplify: always save and load the navigation data! Othervies your routes and additional info might not work properly</b>
     
   <h4>Collection name input field</h4>
     The collection name field is used to indicate which collection you want to work with.<br>
