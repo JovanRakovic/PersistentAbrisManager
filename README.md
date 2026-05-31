@@ -41,7 +41,7 @@ There are two ways of doing this:
       After doing so, providing you selected the correct folder, the text box below the button should be populated with the full path to the folder in which ABRIS.lua is located.<br>
       The full path won't fit inside the allocated display space, but if it is showing a path, then it is the correct one as the app checks if the path exists.<br>
       <img src="./readme_data/pam_window_selected_path.png"></img><br>
-      If the path is valid, it will also be saved in a .txt file inside the PersistentAbris directory and it will be load from there on any future launches of the manager app
+      If the path is valid, it will also be saved in a .txt file inside the PersistentAbris directory and it will be loaded from there on any future launches of the manager app
   </li>
   <li>
       Having slected the path, simply press the "Replace ABRIS.lua" button.<br>
