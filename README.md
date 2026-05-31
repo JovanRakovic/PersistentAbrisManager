@@ -29,7 +29,8 @@ There are two ways of doing this:
 
 <h3>PersistentAbrisManager method</h3>
 <ol>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>Download the lates release of the manager app (PersistentAbrisManager.zip)</li>
+  <li>Unzip the downloaded file directly into the SavedGames DCS directory</li>
+  <li>Open the PersistentAbris folder that was created after unziping and launch PersistentAbrisManager.exe</li>
+  <li><img src="./readme_data/pam_window_first_opening.png"></img></li>
 </ol>
