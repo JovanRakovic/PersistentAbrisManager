@@ -151,7 +151,8 @@ def load_file_parameters():
 
 def replace_abris_lua():
     path = dcs_root_entry.get()
-    shutil.copy(path+"ABRIS.lua",path+"ABRIS_old.lua")
+    if not os.path.isfile(path+"ABRIS_old.lua"):
+        shutil.copy(path+"ABRIS.lua",path+"ABRIS_old.lua")
     shutil.copy("./ABRIS.lua",path+"ABRIS.lua")
 
 root = ttk.Window(themename="darkly")
