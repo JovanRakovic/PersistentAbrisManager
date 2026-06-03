@@ -112,12 +112,12 @@ function LoadNavigation(loader)
 	end
 end
 
-function LoadRoutes(loader)             routes     = load_db_file(false,"ROUTES.lua").routes or {} end
+function LoadRoutes(loader)             routes     = load_db_file(loader,"ROUTES.lua").routes or {} end
 function LoadAdditional(loader)         additional = load_db_file(loader,"ADDITIONAL.lua").additional or {} end
 
-function SaveNavigation(loader)    save_db_file(loader,"navigation",navigation,"NAVIGATION.lua")    end
-function SaveRoutes(loader)        save_db_file(loader,"routes"    ,routes    ,"ROUTES.lua")        end
-function SaveAdditional(loader)    save_db_file(loader,"additional",additional,"ADDITIONAL.lua")    end
+function SaveNavigation(loader)         save_db_file(loader,"navigation",navigation,"NAVIGATION.lua")    end
+function SaveRoutes(loader)             save_db_file(loader,"routes"    ,routes    ,"ROUTES.lua")        end
+function SaveAdditional(loader)         save_db_file(loader,"additional",additional,"ADDITIONAL.lua")    end
 
 Options          = {}
 System_Options   = {}
@@ -126,7 +126,17 @@ local safe_env = make_safe_environment()
 safe_env.LOCALIZE = LOCALIZE
 
 function LoadOptions()
-	local res,env,data = safe_do_mission_file("ABRIS/Options.lua",LockOn_Options.script_path.."ABRIS/Options.lua",safe_env)
+    local options_path = ""
+    local persistent_options_path = default_path.."Database/Options.lua"
+    f = io.open(persistent_options_path)
+    if not f then
+        options_path = LockOn_Options.script_path.."ABRIS/Options.lua"
+    else
+        options_path = persistent_options_path
+        f:close()
+    end
+
+	local res,env,data = safe_do_mission_file("ABRIS/Options.lua",options_path,safe_env)--safe_do_mission_file("ABRIS/Options.lua",lfs.writedir().."PersistentAbris/ABRIS/Options.lua",safe_env)
 	local opt 		   = env.opt
 	if  opt then
 	    Options        = opt.Options
@@ -138,7 +148,7 @@ function SaveOptions()
       save_file("opt",
                 {Options        = Options,
                  System_Options = System_Options},
-                 "Options.lua")
+                 "ABRIS/Database/Options.lua")
 end
 
 LoadOptions()
