@@ -8,8 +8,7 @@
   
   With just the steps described above, you would have a single set of files containing all your routes, additional info and nav data, which would accumulate quite a collection given enough time. Given that you would probably want to avoid having a massive amount of routes and possibly conflicting or inaccurate map elements, I have developed a manager app to work alongside the modified ABRIS.lua file. Keep in mind that you do not need the manager app for the persistent data to work, only to manage what you load and save in an easier fassion.
 
-<h1>Installation<h1></h1>
-
+<h1>Installation</h1>
 As said before, you will need to do two things to make PersistentAbris work: overwrite the <code>ABRIS.lua</code> file with the modified version and make a certain folder structure inside the SavedGames DCS directory.
 
 There are two ways of doing this:
