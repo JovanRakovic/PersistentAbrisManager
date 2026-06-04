@@ -21,7 +21,7 @@ There are two ways of doing this:
 <ol>
   <li>Download the modified <code>ABRIS.lua</code> and <code>Options_example.lua</code> files from the repository above</li>
   <li>Repalce the original ABRIS.lua file in <code>[your dcs root directory]/Mods/aircraft/Ka-50_3/Cockpit/Scripts/Devices_specs/</code> with the downloaded one (feel free to save the original file somewhere)</li>
-  <li>In the SavedGames DCS directory make a folder called <code>PersistentAbris</code>, inside it a folder call <code>ABRIS</code>, and inside it a folder called <code>Database</code>.<br>
+  <li>In the SavedGames DCS directory make a folder called <code>PersistentAbris</code>, inside it a folder called <code>ABRIS</code>, and inside it a folder called <code>Database</code>.<br>
       You should end up with this folder structure inside the SavedGames DCS directory: <code>PersistentAbris/ABRIS/Database</code></li>
   <li>Place the <code>Options_example.lua</code> inside the <code>PersistentAbris</code> folder.</li>
   <br>
