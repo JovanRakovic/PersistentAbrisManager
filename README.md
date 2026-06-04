@@ -61,6 +61,10 @@ There are two ways of doing this:
 If you are using only the modded <code>ABRIS.lua</code> file, you will need to replace it with the updated version (same with the <code>Options_example.lua</code> file)
 <br>
 If you are using the PersistentAbrisManager, you will need to download the new release and extract the zipped files directly in the <code>SavedGames/DCS</code> directory, the same way as in the installation process. All your data will remain saved, so be sure to allow the extraction process to overwrite any files it asks you to. 
+<br><br>
+
+>[!IMPORTANT]
+>It is likely that any DCS updates will revert the modded <code>ABRIS.lua</code> file back to the vanila version, so be sure to replace the file after every update
   
 <h1>How to use</h1>
 <h3>Saving routes, additional info and nav data</h3>
