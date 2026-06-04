@@ -6,6 +6,7 @@ import shutil
 routes = "ROUTES.lua"
 additional = "ADDITIONAL.lua"
 navigation = "NAVIGATION.lua"
+options = "Options.lua"
 
 database_str = "Database"
 dtb_path = "./ABRIS/Database/"
@@ -19,7 +20,7 @@ def set_create_update_btn(update):
         create_update_btn.config(text="Create")
 
 def append_to_collection_display(col_name):
-    r=a=n='-'
+    r=a=n=o='-'
     col_dtb = os.listdir("./ABRIS/"+col_name+"/")
     if routes in col_dtb:
         r = '+' 
@@ -27,7 +28,9 @@ def append_to_collection_display(col_name):
         a = '+' 
     if navigation in col_dtb:
         n = '+'
-    collections_display_treeview.insert('','end',values=(col_name, r, a, n))
+    if options in col_dtb:
+        o = '+'
+    collections_display_treeview.insert('','end',values=(col_name, r, a, n, o))
     collection_list.append(col_name)
 
 def get_collections():
@@ -83,6 +86,8 @@ def create_update_collection():
         shutil.copy(dtb_path+additional,path)
     if check_nav_var.get() and navigation in dir_list:
         shutil.copy(dtb_path+navigation,path)
+    if check_options_var.get() and options in dir_list:
+        shutil.copy(dtb_path+options,path)
     get_collections()
 
 def delete():
@@ -101,6 +106,8 @@ def delete():
             os.remove(path+additional)
         if check_nav_var.get() and navigation in dir_list:
             os.remove(path+navigation)
+        if check_options_var.get() and options in dir_list:
+            os.remove(path+options)
     get_collections()
 
 def clear():
@@ -111,6 +118,8 @@ def clear():
         os.remove(dtb_path+additional)
     if check_nav_var.get() and navigation in dir_list:
         os.remove(dtb_path+navigation)
+    if check_options_var.get() and options in dir_list:
+        os.remove(dtb_path+options)
     get_collections()
 
 def load():
@@ -126,6 +135,8 @@ def load():
         shutil.copy(path+additional,dtb_path)
     if check_nav_var.get() and navigation in dir_list:
         shutil.copy(path+navigation,dtb_path)
+    if check_options_var.get() and options in dir_list:
+        shutil.copy(path+options,dtb_path)
     get_collections()
 
 def set_dcs_root_path():
@@ -157,7 +168,8 @@ def replace_abris_lua():
 
 root = ttk.Window(themename="darkly")
 root.title("PAM - PersistentAbrisManager")
-root.geometry('500x300')
+root.geometry('500x320')
+root.iconbitmap("pam.ico")
 
 padX = 5
 padY = 5
@@ -194,18 +206,17 @@ data_files_label_frame.grid(column=0,row=1, padx=label_padX, pady=label_padY, ip
 check_routes_var = ttk.BooleanVar()
 check_additinoal_var = ttk.BooleanVar()
 check_nav_var = ttk.BooleanVar()
-
-check_routes_var.set(False)
-check_additinoal_var.set(False)
-check_nav_var.set(False)
+check_options_var = ttk.BooleanVar()
 
 check_routes =      ttk.Checkbutton(data_files_label_frame, onvalue=True, offvalue=False, variable=check_routes_var, text="Routes")
 check_additional =  ttk.Checkbutton(data_files_label_frame, onvalue=True, offvalue=False, variable=check_additinoal_var, text="Additional Inf.")
 check_nav =         ttk.Checkbutton(data_files_label_frame, onvalue=True, offvalue=False, variable=check_nav_var, text="Navigation")
+check_options =         ttk.Checkbutton(data_files_label_frame, onvalue=True, offvalue=False, variable=check_options_var, text="Options")
 
-check_routes.grid       (column=0, row=0, padx=padX, pady=padY)
-check_additional.grid   (column=1, row=0, padx=padX, pady=padY)
-check_nav.grid          (column=2, row=0, padx=padX, pady=padY)
+check_routes.grid       (column=0, row=0, padx=padX, pady=padY, sticky="w")
+check_additional.grid   (column=1, row=0, padx=padX, pady=padY, sticky="w")
+check_nav.grid          (column=0, row=1, padx=padX, pady=padY, sticky="w")
+check_options.grid          (column=1, row=1, padx=padX, pady=padY, sticky="w")
 
 #Buttons for create(update)/unload/delete
 manipulation_btns_label_frame = ttk.Labelframe(text="Collection and DTB control buttons")
@@ -252,13 +263,14 @@ collections_display_label_frame.grid(column=1, row=0, rowspan=4, padx=label_padX
 collections_display_label_frame.columnconfigure(0,weight=1)
 collections_display_label_frame.rowconfigure(0,weight=1)
 
-collections_display_treeview = ttk.Treeview(collections_display_label_frame, columns=[0,1,2,3], show="headings")
+collections_display_treeview = ttk.Treeview(collections_display_label_frame, columns=[0,1,2,3,4], show="headings")
 collections_display_treeview.heading(0, text="Name", anchor="w")
-collections_display_treeview.column(0, width=120, minwidth=100, stretch=True)
+collections_display_treeview.column(0, width=100, minwidth=100, stretch=True)
 collections_display_treeview.heading(1, text="R")
 collections_display_treeview.heading(2, text="A")
 collections_display_treeview.heading(3, text="N")
-for i in range(1,4):
+collections_display_treeview.heading(4, text="O")
+for i in range(1,5):
     collections_display_treeview.column(i, width=25,  minwidth=25, stretch=False, anchor="center")
 
 collections_display_treeview.bind("<Double-1>", selectedCollection)

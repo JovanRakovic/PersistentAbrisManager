@@ -1,4 +1,4 @@
---- File Edited by [BSD]TheArchitect
+--- File Edited by [BSD]TheArchitect, mod version:0.2.0
 
 --- ABRIS specifications
 local gettext = require("i_18n")
@@ -126,7 +126,17 @@ local safe_env = make_safe_environment()
 safe_env.LOCALIZE = LOCALIZE
 
 function LoadOptions()
-    local res,env,data = safe_do_mission_file("ABRIS/Options.lua",LockOn_Options.script_path.."ABRIS/Options.lua",safe_env)
+    local options_path = ""
+    local persistent_options_path = default_path.."Database/Options.lua"
+    f = io.open(persistent_options_path)
+    if not f then
+        options_path = LockOn_Options.script_path.."ABRIS/Options.lua"
+    else
+        options_path = persistent_options_path
+        f:close()
+    end
+
+	local res,env,data = safe_do_mission_file("ABRIS/Options.lua",options_path,safe_env)--safe_do_mission_file("ABRIS/Options.lua",lfs.writedir().."PersistentAbris/ABRIS/Options.lua",safe_env)
 	local opt 		   = env.opt
 	if  opt then
 	    Options        = opt.Options
