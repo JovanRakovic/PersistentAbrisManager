@@ -1,7 +1,7 @@
 <h1>Description</h1>
   PersistentAbris is a solution to the problem of losing all your routes, additional info, nav data and options in the Ka-50 when leaving a mission or server.
   
-  The solution to making all the routes and map info persistent across missions is to modify the ```ABRIS.lua``` file, which is responsible for saving and loading said data, so that is saves all the data to a set of files in a location in the SavedGames DCS directory, where it will also read them from. From testing, this does not appear to break the integrity check, so you should be able to fly on any server.
+  The solution to making all the routes and map info persistent across missions is to modify the <code>ABRIS.lua</code> file, which is responsible for saving and loading said data, so that is saves all the data to a set of files in a location in the SavedGames DCS directory, where it will also read them from. From testing, this does not appear to break the integrity check, so you should be able to fly on any server.
   
 >[!NOTE]
 >Currently, if a mission has baked in abris data, your persistent files will not be loaded for that mission. I have tried a couple of ways of getting around this issue, but have yet to find a solution</b>
@@ -10,7 +10,7 @@
 
 <h1>Installation<h1></h1>
 
-As said before, you will need to do two things to make PersistentAbris work: overwrite the ```ABRIS.lua``` file with the modified version and make a certain folder structure inside the SavedGames DCS directory.
+As said before, you will need to do two things to make PersistentAbris work: overwrite the <code>ABRIS.lua</code> file with the modified version and make a certain folder structure inside the SavedGames DCS directory.
 
 There are two ways of doing this:
 <ol>
@@ -27,7 +27,7 @@ There are two ways of doing this:
   <li>Place the <code>Options_example.lua</code> inside the <code>PersistentAbris</code> folder.</li>
   <br>
   Those are the bare minimum steps to get PersistentAbris working, you should be able to save and load you data now. <br>
-  <b>You can find information about saving and loading data in the [How to use](#how-to-use) section below</b>
+  <b>You can find information about saving and loading data in the <a href="#how-to-use">How to use</a> section below</b>
 </ol>
 
 <h3>PersistentAbrisManager method</h3>
@@ -66,7 +66,7 @@ If you are using the PersistentAbrisManager, you will need to download the new r
 >[!IMPORTANT]
 >It is likely that any DCS updates will revert the modded <code>ABRIS.lua</code> file back to the vanila version, so be sure to replace the file after every update
   
-<h1>How to use</h1>
+<h3>How to use</h3>
 <h3>Saving routes, additional info and nav data</h3>
 
 >[!IMPORTANT]
@@ -102,7 +102,7 @@ If you are using the PersistentAbrisManager, you will need to download the new r
 <h3>Saving Abris options</h3>
 Currently, there is no way to save Abris options in game, so you have to manually edit a <code>Options.lua</code> file to do so and place it inside the <code>Database</code> folder so it can be loaded in game.
 <br>
-If you followed the [installation guide](#installation), you will have a <code>Options_example.lua</code> inside the <code>PersistentAbris</code> directory. You can copy it to the database folder and rename it to <code>Options.lua</code>
+If you followed the <a href="#installation">installation guide</a>, you will have a <code>Options_example.lua</code> inside the <code>PersistentAbris</code> directory. You can copy it to the database folder and rename it to <code>Options.lua</code>
   
 <h3>Loading data in game</h3>
   The loading of the data is automatic.<br>
