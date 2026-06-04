@@ -1,12 +1,12 @@
-<h1>Description</h1>
-  PersistentAbris is a solution to the problem of losing all your routes, additional info, nav data and options in the Ka-50 when leaving a mission or server.
+<h1>What is PersistentAbris</h1>
+  PersistentAbris is a solution to the problem of losing all your routes, additional info, nav data and options from the Abris of the Ka-50 when leaving a mission or server in DCS.
   
-  The solution to making all the routes and map info persistent across missions is to modify the <code>ABRIS.lua</code> file, which is responsible for saving and loading said data, so that is saves all the data to a set of files in a location in the SavedGames DCS directory, where it will also read them from. From testing, this does not appear to break the integrity check, so you should be able to fly on any server.
+  The solution to making all the Abris related data persist across missions is to modify the <code>ABRIS.lua</code> file, which is responsible for saving and loading said data, so that is saves all the data to a set of files which don't get deleted and read from them when loading the data. From testing, this does not appear to break the integrity check, so you should be able to fly on any server. All the information gets stored in the Saved Games DCS directory.
   
 >[!NOTE]
 >Currently, if a mission has baked in abris data, your persistent files will not be loaded for that mission. I have tried a couple of ways of getting around this issue, but have yet to find a solution</b>
   
-  With just the steps described above, you would have a single set of files containing all your routes, additional info and nav data, which would accumulate quite a collection given enough time. Given that you would probably want to avoid having a massive amount of routes and possibly conflicting or inaccurate map elements, I have developed a manager app to work alongside the modified ABRIS.lua file. Keep in mind that you do not need the manager app for the persistent data to work, only to manage what you load and save in an easier fassion.
+  With just the steps described above, you would have a single set of files containing all your routes, additional info and nav data and one file for options, which would accumulate quite a collection of information with enough time. Given that you would probably want to avoid having a massive amount of routes and possibly conflicting or inaccurate map elements loaded in at the same time, I also developed a manager app to work alongside the modified ABRIS.lua file. Keep in mind that you do not need the manager app for the persistent data to work, only to manage what you load and save in an easier fassion.
 
 <h1>Installation</h1>
 As said before, you will need to do two things to make PersistentAbris work: overwrite the <code>ABRIS.lua</code> file with the modified version and make a certain folder structure inside the SavedGames DCS directory.
@@ -39,7 +39,7 @@ There are two ways of doing this:
       <img witdh="40%" src="./readme_data/pam_window_first_opening.png"></img>
       <br><br>
       Press the <code>Select Directory</code> button.<br>
-      This will bring up a folder seletion interface. Simply navigate to the root directory of your DCS instalation ( The folder you select will likely be called <code>DCS World</code> )<br>
+      This will bring up a folder seletion interface. Simply navigate to the root directory of your DCS installation ( The folder you select will likely be called <code>DCS World</code> )<br>
       After doing so, providing you selected the correct folder, the text box below the button should be populated with the full path to the folder in which <code>ABRIS.lua</code> is located.<br>
       The full path won't fit inside the allocated display space, but if it is showing a path, then it is the correct one as the app checks if the path exists.
       <br><br>
@@ -105,8 +105,9 @@ If you followed the <a href="#installation">installation guide</a>, you will hav
   
 <h3>Loading data in game</h3>
   The loading of the data is automatic.<br>
-  When you spawn in a Ka-50, the data stored in the "ABRIS/Database" folder will be loaded into the Abris.<br>
-  With that in mind, you can change the data you have loaded in your abris during a mission by respawning. This is achived by moving the wanted data files into the Database folder.<br><br>
+  When you spawn in a Ka-50, the data stored in the <code>Database</code> folder will be loaded into the Abris.<br>
+  With that in mind, you can change the data you have loaded in your abris during a mission by moving the data you want into the <code>Database</code> folder and then respawning.
+  <br><br>
 
 <h3>PersistentAbrisManager</h3>
   <img witdh="40%" src="./readme_data/pam_window_with_collections.png"></img><br>
@@ -114,10 +115,10 @@ If you followed the <a href="#installation">installation guide</a>, you will hav
 
   <h4>Working principle of the app</h4>
     The manager is designed to allow you to easily make different collections of Abris data.<br>
-    The data consists of the 4 files mentioned in the Saving section above.<br>
-    By moving those files in and out of the <code>ABRIS/Database folder</code>, they can be loaded in game or stored in a different directory for later use.
-    All the app does is it creates collections which consist of the abris data files by way of making folders in the <code>ABRIS/</code> directory and copying files between those folders and the <code>Database</code> folder.<br>
-    The collections don't have to contain all 4 files, but as mentioned earlier, always save and load the navigation data along with the routes and/or additional info!
+    The data consists of the 4 files mentioned in the <a href="#how-to-use">How to use</a> section.<br>
+    By moving those files in and out of the <code>Database</code> folder, they can be loaded in game or stored in a different directory for later use.
+    All the app does is it creates collections which consist of the abris data files by way of making folders in the <code>ABRIS</code> directory and copying files between those folders and the <code>Database</code> folder.<br>
+    The collections don't have to contain all 4 files, but as mentioned earlier, <b>always save and load the navigation data along with the routes and/or additional info!</b>
     
   <h4>Collection name input field</h4>
     The collection name field is used to indicate which collection you want to work with.<br>
