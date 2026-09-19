@@ -1,10 +1,11 @@
 <h1>What is PersistentAbris</h1>
   PersistentAbris is a solution to the problem of losing all your routes, additional info, nav data and options from the Abris of the Ka-50 when leaving a mission or server in DCS.
   
-  The solution to making all the Abris related data persist across missions is to modify the <code>ABRIS.lua</code> file, which is responsible for saving and loading said data, so that is saves all the data to a set of files which don't get deleted and read from them when loading the data. From testing, this does not appear to break the integrity check, so you should be able to fly on any server. All the information gets stored in the Saved Games DCS directory.
+  The solution to making all the Abris related data persist across missions is to modify the <code>ABRIS.lua</code> file, which is responsible for saving and loading said data, so that is saves all the data to a set of files which don't get deleted and read from them when loading the data. This mod does brake the integrity check for scripts, so keep in mind that you won't be able to use it on most PVP servers. All the information gets stored in the Saved Games DCS directory.
   
 >[!NOTE]
->Currently, if a mission has baked in abris data, your persistent files will not be loaded for that mission. I have tried a couple of ways of getting around this issue, but have yet to find a solution</b>
+>Currently, if a mission has abris data made by the mission maker, only your abris options will be loaded form the persistently saved data,
+>while the routes, nav data and additional info are loaded from the mission itself</b>
   
   With just the steps described above, you would have a single set of files containing all your routes, additional info and nav data and one file for options, which would accumulate quite a collection of information with enough time. Given that you would probably want to avoid having a massive amount of routes and possibly conflicting or inaccurate map elements loaded in at the same time, I also developed a manager app to work alongside the modified ABRIS.lua file. Keep in mind that you do not need the manager app for the persistent data to work, only to manage what you load and save in an easier fassion.
 
